@@ -75,7 +75,7 @@
             };
           })(this)()
         });
-        this.$container = $("<div>", {
+        this.$container = $("<label>", {
           "class": "" + this.options.baseClass + "-container"
         });
         this.$on = $("<span>", {

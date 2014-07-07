@@ -32,7 +32,7 @@ do ($ = window.jQuery, window) ->
           classes.push "#{@options.baseClass}-indeterminate" if @options.indeterminate
           classes.push "#{@options.baseClass}-id-#{@$element.attr("id")}" if @$element.attr "id"
           classes.join " "
-      @$container = $ "<div>",
+      @$container = $ "<label>",
         class: "#{@options.baseClass}-container"
       @$on = $ "<span>",
         html: @options.onText,

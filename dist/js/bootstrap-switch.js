@@ -86,7 +86,7 @@
           html: this.options.offText,
           "class": "" + this.options.baseClass + "-handle-off " + this.options.baseClass + "-" + this.options.offColor
         });
-        this.$label = $("<label>", {
+        this.$label = $("<span>", {
           html: this.options.labelText,
           "class": "" + this.options.baseClass + "-label"
         });

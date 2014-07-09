@@ -40,7 +40,7 @@ do ($ = window.jQuery, window) ->
       @$off = $ "<span>",
         html: @options.offText,
         class: "#{@options.baseClass}-handle-off #{@options.baseClass}-#{@options.offColor}"
-      @$label = $ "<label>",
+      @$label = $ "<span>",
         html: @options.labelText
         class: "#{@options.baseClass}-label"
 

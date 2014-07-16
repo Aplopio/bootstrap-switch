@@ -48,7 +48,16 @@ do ($ = window.jQuery, window) ->
       @$element.prop "indeterminate", true if @options.indeterminate
 
       # set up events
-      @$element.on "init.bootstrapSwitch", => @options.onInit.apply element, arguments
+      @$element.on "init.bootstrapSwitch", =>
+        @$label.on 'click', (e) ->
+          ###
+            If you do not block this event then this will propagate to the label
+            tag which will invoke a click event on the checkbox that it encloses,
+            resulting in two click events on checkbox( the other event is added by
+            bootstrap-switch manually )
+          ###
+          e.preventDefault()
+        @options.onInit.apply element, arguments
       @$element.on "switchChange.bootstrapSwitch", => @options.onSwitchChange.apply element, arguments
 
       # reassign elements after dom modification

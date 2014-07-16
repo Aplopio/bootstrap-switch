@@ -95,6 +95,16 @@
         }
         this.$element.on("init.bootstrapSwitch", (function(_this) {
           return function() {
+            _this.$label.on('click', function(e) {
+
+              /*
+                If you do not block this event then this will propagate to the label
+                tag which will invoke a click event on the checkbox that it encloses,
+                resulting in two click events on checkbox( the other event is added by
+                bootstrap-switch manually )
+               */
+              return e.preventDefault();
+            });
             return _this.options.onInit.apply(element, arguments);
           };
         })(this));
